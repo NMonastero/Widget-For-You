@@ -12,14 +12,16 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener{
 
-    private Button redButton = null;
+    private Spinner colorMenu = null;
 
-    private Button greenButton = null;
+    private Spinner stickerMenu = null;
 
     private boolean drawBall = true;
 
@@ -31,6 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        colorMenu = findViewById(R.id.colorMenu);
+
+        String[] optionsC = {"Red", "Orange", "Yellow", "Green", "Blue", "Purple"};
+        ArrayAdapter<String> adapterC = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, optionsC);
+        colorMenu.setAdapter(adapterC);
 
         setTitle("SurfaceView");
 
@@ -51,35 +58,19 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         // Add the custom surfaceview object to the layout.
         canvasLayout.addView(customSurfaceView);
 
-        // Click this button to draw a red circle ball move after finger touch.
-        redButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawBall = true;
-            }
-        });
-
-        // Click this button to draw a green rectangle move after finger touch.
-        greenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawBall = false;
-            }
-        });
-
     }
 
     /* Initialise ui controls. */
     private void initControls()
     {
-        if(redButton == null)
+        if(colorMenu == null)
         {
-            redButton = (Button)findViewById(R.id.redButton);
+            colorMenu = (Spinner)findViewById(R.id.colorMenu);
         }
 
-        if(greenButton == null)
+        if(stickerMenu == null)
         {
-            greenButton = (Button)findViewById(R.id.greenButton);
+            stickerMenu = (Spinner)findViewById(R.id.stickerMenu);
         }
 
         // This layout is used to contain custom surfaceview object.

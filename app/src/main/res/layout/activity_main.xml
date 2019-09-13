@@ -16,23 +16,27 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/redButton"
-                android:layout_width="1dp"
+            <Spinner
+                android:id="@+id/colorMenu"
+                android:spinnerMode = "dropdown"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
                 android:layout_weight="1"
-                android:text="Red Ball"
                 android:textAllCaps="false"
-                android:textSize="20dp" />
+                 />
 
-            <Button
-                android:id="@+id/greenButton"
-                android:layout_width="1dp"
+            <Spinner
+                android:id="@+id/stickerMenu"
+                android:spinnerMode = "dropdown"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Green Rectangle"
                 android:textAllCaps="false"
-                android:textSize="20dp" />
+                 />
         </LinearLayout>
 
         <LinearLayout
