@@ -2,8 +2,10 @@ package com.example.widgetforyouultra;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PixelFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     private LinearLayout canvasLayout = null;
 
-   MySurface customSurfaceView = null;
+    MySurface customSurfaceView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,21 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         String[] optionsC = {"Red", "Orange", "Yellow", "Green", "Blue", "Purple"};
         ArrayAdapter<String> adapterC = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, optionsC);
         colorMenu.setAdapter(adapterC);
+        colorMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch(position){
+                    case 0:
+                        //enter something like 'color = red' here
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
 
         setTitle("SurfaceView");
 
@@ -61,27 +79,23 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     }
 
     /* Initialise ui controls. */
-    private void initControls()
-    {
-        if(colorMenu == null)
-        {
-            colorMenu = (Spinner)findViewById(R.id.colorMenu);
+    private void initControls() {
+        if (colorMenu == null) {
+            colorMenu = (Spinner) findViewById(R.id.colorMenu);
         }
 
-        if(stickerMenu == null)
-        {
-            stickerMenu = (Spinner)findViewById(R.id.stickerMenu);
+        if (stickerMenu == null) {
+            stickerMenu = (Spinner) findViewById(R.id.stickerMenu);
         }
 
         // This layout is used to contain custom surfaceview object.
-        if(canvasLayout == null)
-        {
-            canvasLayout = (LinearLayout)findViewById(R.id.customViewLayout);
+        if (canvasLayout == null) {
+            canvasLayout = (LinearLayout) findViewById(R.id.customViewLayout);
         }
     }
 
     /* If user finger touch the surfaceview object. */
-    @Override
+       @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
 
         // If user touch the custom SurfaceView object.
@@ -107,8 +121,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 // Create and set a green paint to custom surfaceview.
                 Paint paint = new Paint();
                 paint.setColor(Color.GREEN);
-              customSurfaceView.setPaint(paint);
-              customSurfaceView.drawRect();
+                customSurfaceView.setPaint(paint);
+                customSurfaceView.drawRect();
             }
 
             // Tell android os the onTouch event has been processed.
