@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.util.DisplayMetrics;
 
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener{
 
@@ -30,12 +31,15 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     private LinearLayout canvasLayout = null;
 
+    private PaintView paintView;
+
     MySurface customSurfaceView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        paintView = (PaintView) findViewById(R.id.paintView);
         colorMenu = findViewById(R.id.colorMenu);
 
         String[] optionsC = {"Red", "Orange", "Yellow", "Green", "Blue", "Purple"};
@@ -46,7 +50,22 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch(position){
                     case 0:
-                        //enter something like 'color = red' here
+                        PaintView.currentColor = R.color.red;
+                        break;
+                    case 1:
+                        PaintView.currentColor = R.color.orange;
+                        break;
+                    case 2:
+                        PaintView.currentColor = R.color.yellow;
+                        break;
+                    case 3:
+                        PaintView.currentColor = R.color.green;
+                        break;
+                    case 4:
+                        PaintView.currentColor = R.color.blue;
+                        break;
+                    case 5:
+                        PaintView.currentColor = R.color.purple;
                         break;
                 }
             }
