@@ -5,3 +5,4 @@ Playing with Widgets has never been more educational
 9/13: Added Spinners for color and sticker selection (this took longer than I thought)
 9/15: Did some more Spinner research and implemented actual functionality for each selection. Enxt step, actual paint
 9/16: Paint research is underway. Most of it is figuring out what each function does because a lot of the physical code is very well documented but missing the context of how it works. My code is sufficiently commented to reflect this.
+9/18: More progress made in research and implementation but signifigant error found while trying to use a realtive layout in a linear layout (I thought this might be possible because you can have a nested linear layout). I might have to change the scope of this project if I can't get it by tommorow. 
