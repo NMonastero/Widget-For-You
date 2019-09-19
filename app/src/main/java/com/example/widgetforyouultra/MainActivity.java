@@ -39,8 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        paintView = (PaintView) findViewById(R.id.paintView);
+        //paintView = findViewById(R.id.paintView);
         colorMenu = findViewById(R.id.colorMenu);
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         String[] optionsC = {"Red", "Orange", "Yellow", "Green", "Blue", "Purple"};
         ArrayAdapter<String> adapterC = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, optionsC);
