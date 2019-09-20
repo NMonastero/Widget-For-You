@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //paintView = findViewById(R.id.paintView);
         colorMenu = findViewById(R.id.colorMenu);
         DisplayMetrics dm = new DisplayMetrics();
+        paintView = findViewById(R.id.paintView);
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         String[] optionsC = {"Red", "Orange", "Yellow", "Green", "Blue", "Purple"};
