@@ -70,6 +70,82 @@ public class MySurface extends SurfaceView implements SurfaceHolder.Callback {
         surfaceHolder.unlockCanvasAndPost(canvas);
     }
 
+    public void city(){
+        Canvas canvas = surfaceHolder.lockCanvas();
+        Paint surfaceBackground = new Paint();
+        surfaceBackground.setColor(getResources().getColor(R.color.purple));
+        canvas.drawRect(0,0,this.getWidth(), this.getHeight(), surfaceBackground);
+
+        paint.setColor(getResources().getColor(R.color.black));
+        canvas.drawRect(0, 2000, this.getWidth(), 1200, paint);
+
+        canvas.drawRect(0,1200, 200, 200, paint);
+
+        canvas.drawRect(230,1200, 460, 800, paint);
+
+        canvas.drawRect(470,1200, 670, 600, paint);
+
+        canvas.drawRect(685,1200, 880, 700, paint);
+
+        canvas.drawRect(900,1200, 1100, 100, paint);
+
+        canvas.drawRect(200,1200, 230, 900, paint);
+        canvas.drawRect(460,1200, 470, 950, paint);
+        canvas.drawRect(670,1200, 685, 750, paint);
+        canvas.drawRect(880,1200, 900, 1000, paint);
+
+        canvas.drawRect(280,1200, 290, 780, paint);
+        canvas.drawRect(320,1200, 325, 760, paint);
+
+        //windows
+        paint.setColor(getResources().getColor(R.color.orange));
+        canvas.drawRect(10,300, 35, 330, paint);
+        canvas.drawRect(45,300, 70, 330, paint);
+        canvas.drawRect(80,300, 105, 330, paint);
+        canvas.drawRect(115,380, 140, 410, paint);
+        canvas.drawRect(10,340, 35, 370, paint);
+        canvas.drawRect(45,600, 70, 630, paint);
+        canvas.drawRect(80,700, 105, 730, paint);
+        canvas.drawRect(115,420, 140, 450, paint);
+
+        canvas.drawRect(415,860, 440, 830, paint);
+        canvas.drawRect(380,860, 405, 830, paint);
+        canvas.drawRect(285,900, 310, 870, paint);
+
+        canvas.drawRect(510,660, 535, 630, paint);
+        canvas.drawRect(510,700, 535, 670, paint);
+        canvas.drawRect(580,810, 605, 780, paint);
+        canvas.drawRect(580,850, 605, 820, paint);
+        canvas.drawRect(615,810, 640, 780, paint);
+
+        canvas.drawRect(735,810, 760, 780, paint);
+        canvas.drawRect(805,890, 830, 860, paint);
+
+        canvas.drawRect(930,160, 955, 130, paint);
+        canvas.drawRect(965,200, 990, 170, paint);
+        canvas.drawRect(965,240, 990, 210, paint);
+        canvas.drawRect(1000,400, 1025, 370, paint);
+        canvas.drawRect(1035,400, 1060, 370, paint);
+        canvas.drawRect(1035,360, 1060, 330, paint);
+        canvas.drawRect(965,600, 990, 570, paint);
+        canvas.drawRect(965,800, 990, 770, paint);
+        canvas.drawRect(1000,800, 1025, 770, paint);
+        //canvas.drawRect(900,1200, 1100, 100, paint);
+        //canvas.drawRect(900,1200, 1100, 100, paint);
+
+        //stars
+        paint.setColor(getResources().getColor(R.color.white));
+        canvas.drawCircle(600, 250, 5, paint);
+        canvas.drawCircle(150, 100, 5, paint);
+        canvas.drawCircle(460, 120, 5, paint);
+        canvas.drawCircle(350, 430, 5, paint);
+        canvas.drawCircle(745, 125, 5, paint);
+
+
+        surfaceHolder.unlockCanvasAndPost(canvas);
+    }
+
+
     public void drawBall()
     {
         surfaceHolder = getHolder();

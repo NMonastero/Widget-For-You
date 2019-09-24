@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity  {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-        String[] optionsC = {"Red", "Orange", "Yellow", "Green", "Blue", "Purple"};
+        String[] optionsC = {"Sunset", "City","Graph"};
         ArrayAdapter<String> adapterC = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, optionsC);
         colorMenu.setAdapter(adapterC);
         colorMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -53,30 +53,20 @@ public class MainActivity extends AppCompatActivity  {
                     case 0:
                         PaintView.currentColor = R.color.red;
                         Paint paint = new Paint();
-                        paint.setColor(Color.RED);
                         customSurfaceView.setPaint(paint);
                         //customSurfaceView.drawBall();
                         customSurfaceView.sunSet();
                         break;
                     case 1:
                         PaintView.currentColor = R.color.orange;
+                        paint = new Paint();
+                        customSurfaceView.setPaint(paint);
+                        customSurfaceView.city();
                         break;
                     case 2:
-                        PaintView.currentColor = R.color.yellow;
-                        break;
-                    case 3:
                         PaintView.currentColor = R.color.green;
-                        paint = new Paint();
-                        paint.setColor(Color.GREEN);
-                        customSurfaceView.setPaint(paint);
-                        customSurfaceView.drawRect();
                         break;
-                    case 4:
-                        PaintView.currentColor = R.color.blue;
-                        break;
-                    case 5:
-                        PaintView.currentColor = R.color.purple;
-                        break;
+
                 }
             }
 
