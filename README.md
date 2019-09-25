@@ -9,3 +9,4 @@ Playing with Widgets has never been more educational
 9/19: This update is a little weird because a few of the changes are from updating android studio. The changes I made are very small and allows for everything to compile but the app stlil doesn't open. In class Friday, I will determine whether or not this project's scope need to be ajusted.
 9/20: Unfortunatly after many nights of toil, I have to pull the plug on paint. With a heavy heart, I present to you... BACKGROUND SIMULATOR!!! Basically , I'm just going to use a bunch of shapes to make backgrounds. More features coming soon maybe?
 9/23: After a weekend of being sick, I finally finished the first background. I will finsh up the whole app tomorrow and begin brainstorming the next app shortly.
+9/24: Finished all backgrounds
