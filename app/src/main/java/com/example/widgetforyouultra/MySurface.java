@@ -61,11 +61,27 @@ public class MySurface extends SurfaceView implements SurfaceHolder.Callback {
         surfaceBackground.setColor(getResources().getColor(R.color.orange));
         // Draw the surfaceview background color.
         canvas.drawRect(0, 0, this.getWidth(), this.getHeight(), surfaceBackground);
+        //canvas.drawRect(0, 2000, this.getWidth(), 615, paint);
 
         paint.setColor(getResources().getColor(R.color.yellow));
-        //canvas.drawCircle(circleX, circleY, 100, paint);
+        canvas.drawCircle(700, 700, 200, paint);
 
-        canvas.drawCircle(200, 200, 200, paint);
+        paint.setColor(getResources().getColor(R.color.tan));
+        canvas.drawRect(0,2000,this.getWidth(),805, paint);
+
+        paint.setColor(getResources().getColor(R.color.yellow));
+        canvas.drawCircle(700, 725, 175, paint);
+
+        paint.setColor(getResources().getColor(R.color.brown));
+        canvas.drawRect(0,805, this.getWidth(), 800, paint);
+
+        paint.setColor(getResources().getColor(R.color.black));
+        canvas.drawCircle(0, 1500, 800, paint);
+
+        paint.setColor(getResources().getColor(R.color.tan));
+        canvas.drawRect(0,2000,this.getWidth(),1300, paint);
+
+
 
         surfaceHolder.unlockCanvasAndPost(canvas);
     }
@@ -145,6 +161,21 @@ public class MySurface extends SurfaceView implements SurfaceHolder.Callback {
         surfaceHolder.unlockCanvasAndPost(canvas);
     }
 
+    public void graph(){
+        Canvas canvas = surfaceHolder.lockCanvas();
+        Paint surfaceBackground = new Paint();
+        surfaceBackground.setColor(getResources().getColor(R.color.white));
+        canvas.drawRect(0,0,this.getWidth(), this.getHeight(), surfaceBackground);
+
+        paint.setColor(getResources().getColor(R.color.black));
+        canvas.drawLine(545, 0,555, 2000, paint);
+        canvas.drawLine(0, 700,1100, 700, paint);
+
+        paint.setColor(getResources().getColor(R.color.red));
+        canvas.drawLine(0, 1000,1100, 400, paint);
+
+        surfaceHolder.unlockCanvasAndPost(canvas);
+    }
 
     public void drawBall()
     {

@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity  {
                         customSurfaceView.city();
                         break;
                     case 2:
+                        paint = new Paint();
+                        customSurfaceView.setPaint(paint);
+                        customSurfaceView.graph();
                         PaintView.currentColor = R.color.green;
                         break;
 

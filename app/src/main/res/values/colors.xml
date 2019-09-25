@@ -11,4 +11,6 @@
     <color name="green">#00ff5f</color>
     <color name="blue">#00afff</color>
     <color name="purple">#af00ff</color>
+    <color name="tan">#ffd000</color>
+    <color name="brown">#654321</color>
 </resources>
